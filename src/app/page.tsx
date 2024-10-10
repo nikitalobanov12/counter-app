@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import CounterDisplay from '@/components/CounterDisplay';
-import IncrementButton from '@/components/IncrementButton';
 import { initDb } from '@/database';
 
 export default function Home() {
@@ -25,10 +24,9 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center bg-slate-900 min-h-screen py-2">
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <CounterDisplay count={count} />
-        <IncrementButton onIncrement={incrementCounter} />
+        <CounterDisplay/>
       </main>
     </div>
   );

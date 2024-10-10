@@ -6,3 +6,7 @@ export async function GET() {
   return NextResponse.json({ value: newValue });
 }
 
+export async function POST() {
+  const newValue = await incrementCounter();
+  return NextResponse.json({ value: newValue });
+}
