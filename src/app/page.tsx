@@ -6,6 +6,7 @@ import { initDb } from '@/database';
 
 export default function Home() {
 
+  // This useEffect hook runs once when the component mounts
   useEffect(() => {
     initDb();
   }, []);
