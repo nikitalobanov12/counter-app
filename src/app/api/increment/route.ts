@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
-import { openDb } from '@/database';
+import { incrementCounter, openDb } from '@/database';
+
 
 export async function GET() {
-  const db = await openDb();
-  const result = await db.get('SELECT value FROM counter WHERE id = 1');
-  return NextResponse.json({ value: result ? result.value : 0 });
+  const newValue = await incrementCounter();
+  return NextResponse.json({ value: newValue });
 }
 
 export async function POST() {
