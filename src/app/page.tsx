@@ -3,17 +3,15 @@
 import { useState, useEffect } from 'react';
 import CounterDisplay from '@/components/CounterDisplay';
 import IncrementButton from '@/components/IncrementButton';
+import { initDb } from '@/database';
 
 export default function Home() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    // Fetch initial count from the database
-    fetch('/api/increment')
-      .then(res => res.json())
-      .then(data => setCount(data.value))
-      .catch(error => console.error('Error fetching initial count:', error));
+    initDb();
   }, []);
+
 
   const incrementCounter = async () => {
     try {
